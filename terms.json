@@ -1,0 +1,1862 @@
+[
+  {
+    "name": "Alžírsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Angola",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Benin",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Botswana",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Burkina Faso",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Burundi",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Ceuta",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Čad",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Dem. rep. Kongo",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Džibutsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Egypt",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Eritrea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Etiopie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Gabon",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Gambie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Ghana",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Guinea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Jihoafrická rep.",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kamerun",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Keňa",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Komory",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Konžská republika",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Lesotho",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Libérie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Libye",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Madagaskar",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Malawi",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Mali",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Maroko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Mauricius",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Mosambik",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Namibie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Niger",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Nigérie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Pobřeží slonoviny",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Rovníková Guinea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Rwanda",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Senegal",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Seychely",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Sierra Leone",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Středoafrická rep.",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Súdán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Svazijsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tanzanie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Togo",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tunisko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Uganda",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Zambie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Zimbabwe",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Afghánistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Arménie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Ázerbájdžán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Bahrajn",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Bangladéš",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Barma",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Bhútán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Brunej",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Čečensko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Čína",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Filipíny",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Gruzie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Indie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Indonésie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Irák",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Írán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Izrael",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Japonsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Jemen",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Jižní Korea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Jordánsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kambodža",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kašmír",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Katar",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kazachstán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kurdistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kuvajt",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kyrgyzstán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Laos",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Libanon",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Malajsie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Maledivy",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Mongolsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Nepál",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Omán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Pákistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Palestina",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Saúdská Arábie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Severní Korea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Singapur",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Spojené arabské emiráty",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Srí Lanka",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Sýrie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tádžikistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Thajsko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tchaj-wan",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tibet",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Turkmenistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Ujgursko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Uzbekistán",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Vietnam",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Východní Timor",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Nová Kaledonie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Nový Jižní Wales",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Nový Zéland",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Papua-Nová Guinea",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Tasmánie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Victoria",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Argentina",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Bolívie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Brazílie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Ekvádor",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Francouzská Guyana",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Guyana",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Chile",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Kolumbie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Paraguay",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Peru",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Surinam",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Uruguay",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Venezuela",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Aljaška",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Belize",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Britská Kolumbie",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Dominikánská republika",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Florida",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Guatemala",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Haiti",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Honduras",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Manitoba",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Massachusetts",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Mexiko",
+    "category": "Státy a regiony"
+  },
+  {
+    "name": "Abidjan",
+    "category": "Města"
+  },
+  {
+    "name": "Abuja",
+    "category": "Města"
+  },
+  {
+    "name": "Accra",
+    "category": "Města"
+  },
+  {
+    "name": "Addis Abeba",
+    "category": "Města"
+  },
+  {
+    "name": "Alexandrie",
+    "category": "Města"
+  },
+  {
+    "name": "Antananarivo",
+    "category": "Města"
+  },
+  {
+    "name": "Asmara",
+    "category": "Města"
+  },
+  {
+    "name": "Bamako",
+    "category": "Města"
+  },
+  {
+    "name": "Benghází",
+    "category": "Města"
+  },
+  {
+    "name": "Bissau",
+    "category": "Města"
+  },
+  {
+    "name": "Brazzaville",
+    "category": "Města"
+  },
+  {
+    "name": "Casablanca",
+    "category": "Města"
+  },
+  {
+    "name": "Conakry",
+    "category": "Města"
+  },
+  {
+    "name": "Dakar",
+    "category": "Města"
+  },
+  {
+    "name": "Dar es Salaam",
+    "category": "Města"
+  },
+  {
+    "name": "Dodoma",
+    "category": "Města"
+  },
+  {
+    "name": "Durban",
+    "category": "Města"
+  },
+  {
+    "name": "Džuba",
+    "category": "Města"
+  },
+  {
+    "name": "Freetown",
+    "category": "Města"
+  },
+  {
+    "name": "Harare",
+    "category": "Města"
+  },
+  {
+    "name": "Chartúm",
+    "category": "Města"
+  },
+  {
+    "name": "Johannesburg",
+    "category": "Města"
+  },
+  {
+    "name": "Káhira",
+    "category": "Města"
+  },
+  {
+    "name": "Kampala",
+    "category": "Města"
+  },
+  {
+    "name": "Kapské město",
+    "category": "Města"
+  },
+  {
+    "name": "Kigali",
+    "category": "Města"
+  },
+  {
+    "name": "Kinshasa",
+    "category": "Města"
+  },
+  {
+    "name": "Lagos",
+    "category": "Města"
+  },
+  {
+    "name": "Libreville",
+    "category": "Města"
+  },
+  {
+    "name": "Lomé",
+    "category": "Města"
+  },
+  {
+    "name": "Luanda",
+    "category": "Města"
+  },
+  {
+    "name": "Lusaka",
+    "category": "Města"
+  },
+  {
+    "name": "Maputo",
+    "category": "Města"
+  },
+  {
+    "name": "Monrovia",
+    "category": "Města"
+  },
+  {
+    "name": "Nairobi",
+    "category": "Města"
+  },
+  {
+    "name": "N'Djamena",
+    "category": "Města"
+  },
+  {
+    "name": "Niamey",
+    "category": "Města"
+  },
+  {
+    "name": "Ougadougou",
+    "category": "Města"
+  },
+  {
+    "name": "Pretoria",
+    "category": "Města"
+  },
+  {
+    "name": "Rabat",
+    "category": "Města"
+  },
+  {
+    "name": "Tripolis",
+    "category": "Města"
+  },
+  {
+    "name": "Abú Zabí",
+    "category": "Města"
+  },
+  {
+    "name": "Ammán",
+    "category": "Města"
+  },
+  {
+    "name": "Ankara",
+    "category": "Města"
+  },
+  {
+    "name": "Ašchabad",
+    "category": "Města"
+  },
+  {
+    "name": "Bagdád",
+    "category": "Města"
+  },
+  {
+    "name": "Baku",
+    "category": "Města"
+  },
+  {
+    "name": "Bangkok",
+    "category": "Města"
+  },
+  {
+    "name": "Basra",
+    "category": "Města"
+  },
+  {
+    "name": "Bejrút",
+    "category": "Města"
+  },
+  {
+    "name": "Biškek",
+    "category": "Města"
+  },
+  {
+    "name": "Bombaj",
+    "category": "Města"
+  },
+  {
+    "name": "Damašek",
+    "category": "Města"
+  },
+  {
+    "name": "Dháka",
+    "category": "Města"
+  },
+  {
+    "name": "Dillí",
+    "category": "Města"
+  },
+  {
+    "name": "Dušanbe",
+    "category": "Města"
+  },
+  {
+    "name": "Gaza",
+    "category": "Města"
+  },
+  {
+    "name": "Hanoj",
+    "category": "Města"
+  },
+  {
+    "name": "Hirošima",
+    "category": "Města"
+  },
+  {
+    "name": "Ho Či Minovo Město",
+    "category": "Města"
+  },
+  {
+    "name": "Hongkong",
+    "category": "Města"
+  },
+  {
+    "name": "Irkutsk",
+    "category": "Města"
+  },
+  {
+    "name": "Islámábád",
+    "category": "Města"
+  },
+  {
+    "name": "Izmír",
+    "category": "Města"
+  },
+  {
+    "name": "Jakarta",
+    "category": "Města"
+  },
+  {
+    "name": "Jerevan",
+    "category": "Města"
+  },
+  {
+    "name": "Jeruzalém",
+    "category": "Města"
+  },
+  {
+    "name": "Jokohama",
+    "category": "Města"
+  },
+  {
+    "name": "Kábul",
+    "category": "Města"
+  },
+  {
+    "name": "Kalkata",
+    "category": "Města"
+  },
+  {
+    "name": "Kanton",
+    "category": "Města"
+  },
+  {
+    "name": "Karáčí",
+    "category": "Města"
+  },
+  {
+    "name": "Káthmándú",
+    "category": "Města"
+  },
+  {
+    "name": "Kuala Lumpur",
+    "category": "Města"
+  },
+  {
+    "name": "Lhasa",
+    "category": "Města"
+  },
+  {
+    "name": "Macao",
+    "category": "Města"
+  },
+  {
+    "name": "Manila",
+    "category": "Města"
+  },
+  {
+    "name": "Maskat",
+    "category": "Města"
+  },
+  {
+    "name": "Mekka",
+    "category": "Města"
+  },
+  {
+    "name": "Nové Dillí",
+    "category": "Města"
+  },
+  {
+    "name": "Novosibirsk",
+    "category": "Města"
+  },
+  {
+    "name": "Astana",
+    "category": "Města"
+  },
+  {
+    "name": "Omsk",
+    "category": "Města"
+  },
+  {
+    "name": "Ósaka",
+    "category": "Města"
+  },
+  {
+    "name": "Peking",
+    "category": "Města"
+  },
+  {
+    "name": "Phnompenh",
+    "category": "Města"
+  },
+  {
+    "name": "Pchjongjang",
+    "category": "Města"
+  },
+  {
+    "name": "Rangún",
+    "category": "Města"
+  },
+  {
+    "name": "Rijád",
+    "category": "Města"
+  },
+  {
+    "name": "San'á",
+    "category": "Města"
+  },
+  {
+    "name": "Soul",
+    "category": "Města"
+  },
+  {
+    "name": "Šanghaj",
+    "category": "Města"
+  },
+  {
+    "name": "Taškent",
+    "category": "Města"
+  },
+  {
+    "name": "Tbilisi",
+    "category": "Města"
+  },
+  {
+    "name": "Teherán",
+    "category": "Města"
+  },
+  {
+    "name": "Tel Aviv",
+    "category": "Města"
+  },
+  {
+    "name": "Tchaj-pej",
+    "category": "Města"
+  },
+  {
+    "name": "Tokio",
+    "category": "Města"
+  },
+  {
+    "name": "Ulánbátar",
+    "category": "Města"
+  },
+  {
+    "name": "Urumči",
+    "category": "Města"
+  },
+  {
+    "name": "Vladivostok",
+    "category": "Města"
+  },
+  {
+    "name": "Wellington",
+    "category": "Města"
+  },
+  {
+    "name": "Adelaide",
+    "category": "Města"
+  },
+  {
+    "name": "Auckland",
+    "category": "Města"
+  },
+  {
+    "name": "Brisbane",
+    "category": "Města"
+  },
+  {
+    "name": "Canberra",
+    "category": "Města"
+  },
+  {
+    "name": "Melbourne",
+    "category": "Města"
+  },
+  {
+    "name": "Perth",
+    "category": "Města"
+  },
+  {
+    "name": "Sydney",
+    "category": "Města"
+  },
+  {
+    "name": "Asunción",
+    "category": "Města"
+  },
+  {
+    "name": "Belém",
+    "category": "Města"
+  },
+  {
+    "name": "Bogotá",
+    "category": "Města"
+  },
+  {
+    "name": "Brasília",
+    "category": "Města"
+  },
+  {
+    "name": "Buenos Aires",
+    "category": "Města"
+  },
+  {
+    "name": "Caracas",
+    "category": "Města"
+  },
+  {
+    "name": "Cuzco",
+    "category": "Města"
+  },
+  {
+    "name": "La Paz",
+    "category": "Města"
+  },
+  {
+    "name": "Lima",
+    "category": "Města"
+  },
+  {
+    "name": "Manaus",
+    "category": "Města"
+  },
+  {
+    "name": "Medellín",
+    "category": "Města"
+  },
+  {
+    "name": "Montevideo",
+    "category": "Města"
+  },
+  {
+    "name": "Quito",
+    "category": "Města"
+  },
+  {
+    "name": "Rio de Janeiro",
+    "category": "Města"
+  },
+  {
+    "name": "Santiago",
+    "category": "Města"
+  },
+  {
+    "name": "São Paulo",
+    "category": "Města"
+  },
+  {
+    "name": "Atlanta",
+    "category": "Města"
+  },
+  {
+    "name": "Boston",
+    "category": "Města"
+  },
+  {
+    "name": "Ciudad de México",
+    "category": "Města"
+  },
+  {
+    "name": "Denver",
+    "category": "Města"
+  },
+  {
+    "name": "Detroit",
+    "category": "Města"
+  },
+  {
+    "name": "Houston",
+    "category": "Města"
+  },
+  {
+    "name": "Chicago",
+    "category": "Města"
+  },
+  {
+    "name": "Havana",
+    "category": "Města"
+  },
+  {
+    "name": "Las Vegas",
+    "category": "Města"
+  },
+  {
+    "name": "Los Angeles",
+    "category": "Města"
+  },
+  {
+    "name": "Miami",
+    "category": "Města"
+  },
+  {
+    "name": "Montréal",
+    "category": "Města"
+  },
+  {
+    "name": "New Orleans",
+    "category": "Města"
+  },
+  {
+    "name": "New York City",
+    "category": "Města"
+  },
+  {
+    "name": "Oklahoma City",
+    "category": "Města"
+  },
+  {
+    "name": "Ottawa",
+    "category": "Města"
+  },
+  {
+    "name": "Port-au-Prince",
+    "category": "Města"
+  },
+  {
+    "name": "Sacramento",
+    "category": "Města"
+  },
+  {
+    "name": "Salt Lake City",
+    "category": "Města"
+  },
+  {
+    "name": "San Francisco",
+    "category": "Města"
+  },
+  {
+    "name": "Seattle",
+    "category": "Města"
+  },
+  {
+    "name": "St. Louis",
+    "category": "Města"
+  },
+  {
+    "name": "Toronto",
+    "category": "Města"
+  },
+  {
+    "name": "Vancouver",
+    "category": "Města"
+  },
+  {
+    "name": "Washington",
+    "category": "Města"
+  },
+  {
+    "name": "Atlas",
+    "category": "Orografie"
+  },
+  {
+    "name": "Dárfúr",
+    "category": "Orografie"
+  },
+  {
+    "name": "Dračí hory",
+    "category": "Orografie"
+  },
+  {
+    "name": "Džabal Tubkal",
+    "category": "Orografie"
+  },
+  {
+    "name": "Kilimandžáro",
+    "category": "Orografie"
+  },
+  {
+    "name": "Súdánská vysočina",
+    "category": "Orografie"
+  },
+  {
+    "name": "Tibesti",
+    "category": "Orografie"
+  },
+  {
+    "name": "Altaj",
+    "category": "Orografie"
+  },
+  {
+    "name": "Ararat",
+    "category": "Orografie"
+  },
+  {
+    "name": "Elborz",
+    "category": "Orografie"
+  },
+  {
+    "name": "Elbrus",
+    "category": "Orografie"
+  },
+  {
+    "name": "Fudži",
+    "category": "Orografie"
+  },
+  {
+    "name": "Himaláj",
+    "category": "Orografie"
+  },
+  {
+    "name": "Hindúkuš",
+    "category": "Orografie"
+  },
+  {
+    "name": "Karakoam",
+    "category": "Orografie"
+  },
+  {
+    "name": "Kavkaz",
+    "category": "Orografie"
+  },
+  {
+    "name": "Mt. Everest",
+    "category": "Orografie"
+  },
+  {
+    "name": "Pamír",
+    "category": "Orografie"
+  },
+  {
+    "name": "Ťan-Šan",
+    "category": "Orografie"
+  },
+  {
+    "name": "Ural",
+    "category": "Orografie"
+  },
+  {
+    "name": "Jižní Alpy",
+    "category": "Orografie"
+  },
+  {
+    "name": "Mt. Cook",
+    "category": "Orografie"
+  },
+  {
+    "name": "Uluru",
+    "category": "Orografie"
+  },
+  {
+    "name": "Aconcaqua",
+    "category": "Orografie"
+  },
+  {
+    "name": "Andy",
+    "category": "Orografie"
+  },
+  {
+    "name": "Cotopaxi",
+    "category": "Orografie"
+  },
+  {
+    "name": "Guayanská vysočina",
+    "category": "Orografie"
+  },
+  {
+    "name": "Nevada de Huascarán",
+    "category": "Orografie"
+  },
+  {
+    "name": "Východní Kordillera",
+    "category": "Orografie"
+  },
+  {
+    "name": "Západní Kordillera",
+    "category": "Orografie"
+  },
+  {
+    "name": "Appalačské pohoří",
+    "category": "Orografie"
+  },
+  {
+    "name": "Denali (Mt. MacKinley)",
+    "category": "Orografie"
+  },
+  {
+    "name": "Mt. St. Helens",
+    "category": "Orografie"
+  },
+  {
+    "name": "Popocatépetl",
+    "category": "Orografie"
+  },
+  {
+    "name": "Sierra Nevada",
+    "category": "Orografie"
+  },
+  {
+    "name": "Skalnaté hory",
+    "category": "Orografie"
+  },
+  {
+    "name": "Bahr al-Arab",
+    "category": "Řeky"
+  },
+  {
+    "name": "Bílá Volta",
+    "category": "Řeky"
+  },
+  {
+    "name": "Kongo (řeka)",
+    "category": "Řeky"
+  },
+  {
+    "name": "Nil",
+    "category": "Řeky"
+  },
+  {
+    "name": "Orange",
+    "category": "Řeky"
+  },
+  {
+    "name": "Zambezi",
+    "category": "Řeky"
+  },
+  {
+    "name": "Amudarja",
+    "category": "Řeky"
+  },
+  {
+    "name": "Amur",
+    "category": "Řeky"
+  },
+  {
+    "name": "Brahmaputra",
+    "category": "Řeky"
+  },
+  {
+    "name": "Eufrat",
+    "category": "Řeky"
+  },
+  {
+    "name": "Ganga",
+    "category": "Řeky"
+  },
+  {
+    "name": "Indus",
+    "category": "Řeky"
+  },
+  {
+    "name": "Irtyš",
+    "category": "Řeky"
+  },
+  {
+    "name": "Jenisej",
+    "category": "Řeky"
+  },
+  {
+    "name": "Lena",
+    "category": "Řeky"
+  },
+  {
+    "name": "Mekong",
+    "category": "Řeky"
+  },
+  {
+    "name": "Ob",
+    "category": "Řeky"
+  },
+  {
+    "name": "Syrdarja",
+    "category": "Řeky"
+  },
+  {
+    "name": "Tigris",
+    "category": "Řeky"
+  },
+  {
+    "name": "Žlutá řeka",
+    "category": "Řeky"
+  },
+  {
+    "name": "Darling",
+    "category": "Řeky"
+  },
+  {
+    "name": "Eyrovo jezero",
+    "category": "Řeky"
+  },
+  {
+    "name": "Murray",
+    "category": "Řeky"
+  },
+  {
+    "name": "Amazonka",
+    "category": "Řeky"
+  },
+  {
+    "name": "Casaquiare",
+    "category": "Řeky"
+  },
+  {
+    "name": "Marañón",
+    "category": "Řeky"
+  },
+  {
+    "name": "Orinoko",
+    "category": "Řeky"
+  },
+  {
+    "name": "Paraná",
+    "category": "Řeky"
+  },
+  {
+    "name": "Rio Negro",
+    "category": "Řeky"
+  },
+  {
+    "name": "São Francisco",
+    "category": "Řeky"
+  },
+  {
+    "name": "Ucayali",
+    "category": "Řeky"
+  },
+  {
+    "name": "Athabaska",
+    "category": "Řeky"
+  },
+  {
+    "name": "Colorado",
+    "category": "Řeky"
+  },
+  {
+    "name": "Mackenzie",
+    "category": "Řeky"
+  },
+  {
+    "name": "Mississippi",
+    "category": "Řeky"
+  },
+  {
+    "name": "Missouri",
+    "category": "Řeky"
+  },
+  {
+    "name": "Rio Grande",
+    "category": "Řeky"
+  },
+  {
+    "name": "řeka Sv. Vavřince",
+    "category": "Řeky"
+  },
+  {
+    "name": "Tennesee",
+    "category": "Řeky"
+  },
+  {
+    "name": "Adenský záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Asuánská nádrž",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Báb al-Mandáb",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Čadské jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Guinejský záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Okawango",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Rudé moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Suezský průplav",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Tana",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Tanganika",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Turkana",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Ukerewe",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Velká Syrta",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Viktoriiny vodopády",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Arabské moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Aralské jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Bajkal",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Barentsovo moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Bengálský záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Hormuzský průliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Issyk-kul",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Kaspické moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Mrtvé moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Ochotské moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Perský záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Tajmyr",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Vanské jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Žluté moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Tasmanovo moře",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Iguacu",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Itaipu",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Magalhãesův průliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Maracaibský záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Salar de Uyuni",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Salinas Grande",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Titicaca",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Beringův průliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Erijské jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Hořejší jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Hudsonův záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Huronské jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Chesapeakeská zátoka",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Jamesova zátoka",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Mexický záliv",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Michiganské j.",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Niagarské vodopády",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Panamský průplav",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Velké Solné jezero",
+    "category": "Ostatní hydrosféra"
+  },
+  {
+    "name": "Arabská poušť",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Assalská prol.",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Danaklijská prol.",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Džerba",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kalahari",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Luanda-Katanga",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Masajská step",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Namib",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Nubijská poušť",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Réunion",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Sahara",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Serengeti",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Velký západní Erg",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Zanzibar",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Andamany",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Bali",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Borneo",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Cejlon",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Celebes",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Čukotka",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Ferganská kotlina",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Gobi",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Jáva",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kamčatka",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Karakum",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kurily",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kyzylkum",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Luzon",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Malá Asie",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Malé Sundy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Mindanao",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Moluky",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Nikobary",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Přední Indie",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Rjúkjú",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Sachalin",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Sinaj",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Sumatra",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Taklamakan",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Zadní Indie",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Země Františka Josefa",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Velká útesová bariéra",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Velká Viktoriina poušť",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Velké Sundy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Atacama",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Falklandy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Galapágy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Laplatská nížina",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "mys Dobré naděje",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "mys Horn",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Ohňová země",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Patagonie",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Yukatán",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Aleuty",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Bahamy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Hispaniola",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Jamajka",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kajmanské ostrovy",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Kuba",
+    "category": "Ostatní pojmy"
+  },
+  {
+    "name": "Labrador",
+    "category": "Ostatní pojmy"
+  }
+]
