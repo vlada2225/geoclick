@@ -13,7 +13,7 @@ function map(){
   countryLayer.selectAll('path').data(features).join('path').attr('class','country').attr('d',path).on('click',function(event,f){if($('filter').value==='Státy a regiony'&&active){event.stopPropagation();pick(f)}});
   polyLayer.selectAll('path').data(orogPolygons).join('path').attr('class','orog-polygon').attr('d',path).on('click',function(event,f){if($('filter').value==='Orografie'&&active){event.stopPropagation();pick(f)}});
   pointLayer.selectAll('circle').data(orogPoints).join('circle').attr('class','orog-dot').attr('cx',d=>projection(d.geometry.coordinates)[0]).attr('cy',d=>projection(d.geometry.coordinates)[1]).attr('r',3.5);
-  zoomBehavior=d3.zoom().extent([[0,0],[1200,650]]).scaleExtent([1,12]).on('zoom',e=>{countryLayer.attr('transform',e.transform);cityLayer.attr('transform',e.transform);polyLayer.attr('transform',e.transform);pointLayer.attr('transform',e.transform)});
+  zoomBehavior=d3.zoom().extent([[0,0],[1200,650]]).scaleExtent([1,14]).on('zoom',e=>{countryLayer.attr('transform',e.transform);cityLayer.attr('transform',e.transform);polyLayer.attr('transform',e.transform);pointLayer.attr('transform',e.transform)});
   svg.call(zoomBehavior).on('dblclick.zoom',null);
   svg.on('click.city-orog',function(event){
     const category=$('filter').value;if(!active||!current||locked)return;
@@ -32,52 +32,71 @@ function clearWrongMarks(){d3.selectAll('.country,.orog-polygon').classed('wrong
 function resetZoom(){if(zoomBehavior)d3.select('#map').call(zoomBehavior.transform,d3.zoomIdentity)}
 function zoomToCurrent(category){
  const svg=d3.select('#map');
- const width=1200,height=650,padding=95;
+ const node=svg.node();
+ const vb=node.viewBox.baseVal;
+ const width=vb.width||1200;
+ const height=vb.height||650;
+ const padding=90;
  let bounds=null;
- const addBounds=b=>{
-  if(!b||!b[0]||!b[1]||!Number.isFinite(b[0][0])||!Number.isFinite(b[0][1])||!Number.isFinite(b[1][0])||!Number.isFinite(b[1][1]))return;
-  if(!bounds)bounds=[[b[0][0],b[0][1]],[b[1][0],b[1][1]]];
-  else{
+
+ function addBounds(b){
+  if(!b||!b[0]||!b[1])return;
+  const values=[b[0][0],b[0][1],b[1][0],b[1][1]];
+  if(!values.every(Number.isFinite))return;
+  if(!bounds){
+   bounds=[[b[0][0],b[0][1]],[b[1][0],b[1][1]]];
+  }else{
    bounds[0][0]=Math.min(bounds[0][0],b[0][0]);
    bounds[0][1]=Math.min(bounds[0][1],b[0][1]);
    bounds[1][0]=Math.max(bounds[1][0],b[1][0]);
    bounds[1][1]=Math.max(bounds[1][1],b[1][1]);
   }
- };
+ }
+
+ // Získání skutečného rozsahu hledaného objektu v souřadnicích mapy.
  if(category==='Státy a regiony'&&current.feature){
   addBounds(d3.geoPath(projection).bounds(current.feature));
  }else if(category==='Města'&&current.feature){
   const p=projection(current.feature.geometry.coordinates);
-  if(p)addBounds([p,p]);
+  if(p)addBounds([[p[0]-18,p[1]-18],[p[0]+18,p[1]+18]]);
  }else if(category==='Orografie'&&current.target){
-  current.target.polygons.forEach(f=>addBounds(d3.geoPath(projection).bounds(f)));
+  current.target.polygons.forEach(f=>{
+   addBounds(d3.geoPath(projection).bounds(f));
+  });
   current.target.points.forEach(f=>{
    const p=projection(f.geometry.coordinates);
-   if(p)addBounds([p,p]);
+   if(p)addBounds([[p[0]-18,p[1]-18],[p[0]+18,p[1]+18]]);
   });
  }
- if(!bounds)return;
 
- const cx=(bounds[0][0]+bounds[1][0])/2;
- const cy=(bounds[0][1]+bounds[1][1])/2;
- const bw=Math.max(1,bounds[1][0]-bounds[0][0]);
- const bh=Math.max(1,bounds[1][1]-bounds[0][1]);
- let k;
- if(category==='Města')k=5.5;
- else k=Math.min(12,(width-2*padding)/bw,(height-2*padding)/bh);
- k=Math.max(1.5,k);
+ if(!bounds){
+  console.warn('GeoClick zoom: pro hledaný objekt nebylo možné vypočítat hranice.');
+  return;
+ }
 
- // Nejprve přeruš případnou předchozí animaci. Pak nech D3 centrovat
- // souřadnice přímo do středu SVG, místo ručního skládání transformace.
+ const centerX=(bounds[0][0]+bounds[1][0])/2;
+ const centerY=(bounds[0][1]+bounds[1][1])/2;
+ const objectWidth=Math.max(36,bounds[1][0]-bounds[0][0]);
+ const objectHeight=Math.max(36,bounds[1][1]-bounds[0][1]);
+
+ // Měřítko se přizpůsobí velikosti objektu a nikdy nepřekročí limit D3 zoomu.
+ const fitX=(width-2*padding)/objectWidth;
+ const fitY=(height-2*padding)/objectHeight;
+ let scale=Math.min(fitX,fitY,12);
+ if(category==='Města')scale=5.5;
+ scale=Math.max(1.15,Math.min(12,scale));
+
+ // D3 transformace: nejprve měřítko, poté posun středu objektu do středu SVG.
+ const transform=d3.zoomIdentity
+  .translate(width/2-scale*centerX,height/2-scale*centerY)
+  .scale(scale);
+
+ // Zrušíme případnou předchozí animaci a spustíme nové centrování.
  svg.interrupt();
- const target=d3.zoomIdentity
-  .translate(width/2,height/2)
-  .scale(k)
-  .translate(-cx,-cy);
  svg.transition()
-  .duration(900)
+  .duration(850)
   .ease(d3.easeCubicInOut)
-  .call(zoomBehavior.transform,target);
+  .call(zoomBehavior.transform,transform);
 }
 function fmt(s){return s===null?'∞':String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 function stats(){$('score').textContent=score;$('wrong').textContent=wrong;$('questionCount').textContent=`Otázka ${answered+(current?1:0)}`;$('streak').textContent=`Série: ${streak}`;$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
