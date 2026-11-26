@@ -124,3 +124,6 @@ VERZE 3.18 – NEVIDITELNÉ ŘEKY
 - Říční linie ani jejich stavové zvýraznění se nevykreslují.
 - Zachovány jsou pouze průhledné klikací geometrie, aktivní pouze při kvízu Řeky.
 - Klikací tolerance zůstává zachována; hráč nevidí obrysy ani průběh řek.
+
+
+Verze 3.19: Rozsirena pouze neviditelna klikaci zona rek z 16 na 28 CSS px. Viditelnost a styl odhalovani rek zustavaji beze zmeny.

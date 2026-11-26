@@ -82,7 +82,7 @@ function resizeRiverStrokes(k){
  const rect=node.getBoundingClientRect();
  const responsiveScale=1200/Math.max(1,rect.width);
  d3.select('#rivers').selectAll('.river-line').style('stroke-width',function(){const el=d3.select(this);return ((el.classed('correct')||el.classed('revealed'))?3.2:1.55)*responsiveScale/k+'px'});
- d3.select('#rivers').selectAll('.river-hit').style('stroke-width',16*responsiveScale/k+'px');
+ d3.select('#rivers').selectAll('.river-hit').style('stroke-width',28*responsiveScale/k+'px');
 }
 function setRiverInteraction(){d3.select('#rivers').selectAll('.river-hit').style('pointer-events',active&&$('filter').value==='Řeky'?'stroke':'none')}
 function riverMatch(term){const n=norm(term.name);return riverFeatures.find(f=>norm(f.properties.name)===n)}
