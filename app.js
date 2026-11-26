@@ -13,7 +13,7 @@ function map(){
   countryLayer.selectAll('path').data(features).join('path').attr('class','country').attr('d',path).on('click',function(event,f){if($('filter').value==='Státy a regiony'&&active){event.stopPropagation();pick(f)}});
   polyLayer.selectAll('path').data(orogPolygons).join('path').attr('class','orog-polygon').attr('d',path).on('click',function(event,f){if($('filter').value==='Orografie'&&active){event.stopPropagation();pick(f)}});
   pointLayer.selectAll('circle').data(orogPoints).join('circle').attr('class','orog-dot').attr('cx',d=>projection(d.geometry.coordinates)[0]).attr('cy',d=>projection(d.geometry.coordinates)[1]).attr('r',3.5);
-  zoomBehavior=d3.zoom().scaleExtent([1,14]).on('zoom',e=>{countryLayer.attr('transform',e.transform);cityLayer.attr('transform',e.transform);polyLayer.attr('transform',e.transform);pointLayer.attr('transform',e.transform)});
+  zoomBehavior=d3.zoom().extent([[0,0],[1200,650]]).scaleExtent([1,12]).on('zoom',e=>{countryLayer.attr('transform',e.transform);cityLayer.attr('transform',e.transform);polyLayer.attr('transform',e.transform);pointLayer.attr('transform',e.transform)});
   svg.call(zoomBehavior).on('dblclick.zoom',null);
   svg.on('click.city-orog',function(event){
     const category=$('filter').value;if(!active||!current||locked)return;
@@ -31,32 +31,53 @@ function resetColors(){d3.selectAll('.country,.orog-polygon').classed('wrong',fa
 function clearWrongMarks(){d3.selectAll('.country,.orog-polygon').classed('wrong',false).classed('revealed',false)}
 function resetZoom(){if(zoomBehavior)d3.select('#map').call(zoomBehavior.transform,d3.zoomIdentity)}
 function zoomToCurrent(category){
- const svg=d3.select('#map'),width=1200,height=650,padding=95;
+ const svg=d3.select('#map');
+ const width=1200,height=650,padding=95;
  let bounds=null;
  const addBounds=b=>{
   if(!b||!b[0]||!b[1]||!Number.isFinite(b[0][0])||!Number.isFinite(b[0][1])||!Number.isFinite(b[1][0])||!Number.isFinite(b[1][1]))return;
   if(!bounds)bounds=[[b[0][0],b[0][1]],[b[1][0],b[1][1]]];
   else{
-   bounds[0][0]=Math.min(bounds[0][0],b[0][0]);bounds[0][1]=Math.min(bounds[0][1],b[0][1]);
-   bounds[1][0]=Math.max(bounds[1][0],b[1][0]);bounds[1][1]=Math.max(bounds[1][1],b[1][1]);
+   bounds[0][0]=Math.min(bounds[0][0],b[0][0]);
+   bounds[0][1]=Math.min(bounds[0][1],b[0][1]);
+   bounds[1][0]=Math.max(bounds[1][0],b[1][0]);
+   bounds[1][1]=Math.max(bounds[1][1],b[1][1]);
   }
  };
  if(category==='Státy a regiony'&&current.feature){
   addBounds(d3.geoPath(projection).bounds(current.feature));
  }else if(category==='Města'&&current.feature){
-  const p=projection(current.feature.geometry.coordinates);addBounds([p,p]);
- }else if(category==='Orografie'){
+  const p=projection(current.feature.geometry.coordinates);
+  if(p)addBounds([p,p]);
+ }else if(category==='Orografie'&&current.target){
   current.target.polygons.forEach(f=>addBounds(d3.geoPath(projection).bounds(f)));
-  current.target.points.forEach(f=>{const p=projection(f.geometry.coordinates);addBounds([p,p])});
+  current.target.points.forEach(f=>{
+   const p=projection(f.geometry.coordinates);
+   if(p)addBounds([p,p]);
+  });
  }
  if(!bounds)return;
- const cx=(bounds[0][0]+bounds[1][0])/2,cy=(bounds[0][1]+bounds[1][1])/2;
- const bw=Math.max(1,bounds[1][0]-bounds[0][0]),bh=Math.max(1,bounds[1][1]-bounds[0][1]);
+
+ const cx=(bounds[0][0]+bounds[1][0])/2;
+ const cy=(bounds[0][1]+bounds[1][1])/2;
+ const bw=Math.max(1,bounds[1][0]-bounds[0][0]);
+ const bh=Math.max(1,bounds[1][1]-bounds[0][1]);
  let k;
  if(category==='Města')k=5.5;
- else k=Math.max(1.6,Math.min(10,(width-2*padding)/bw,(height-2*padding)/bh));
- const transform=d3.zoomIdentity.translate(width/2-k*cx,height/2-k*cy).scale(k);
- svg.transition().duration(750).call(zoomBehavior.transform,transform);
+ else k=Math.min(12,(width-2*padding)/bw,(height-2*padding)/bh);
+ k=Math.max(1.5,k);
+
+ // Nejprve přeruš případnou předchozí animaci. Pak nech D3 centrovat
+ // souřadnice přímo do středu SVG, místo ručního skládání transformace.
+ svg.interrupt();
+ const target=d3.zoomIdentity
+  .translate(width/2,height/2)
+  .scale(k)
+  .translate(-cx,-cy);
+ svg.transition()
+  .duration(900)
+  .ease(d3.easeCubicInOut)
+  .call(zoomBehavior.transform,target);
 }
 function fmt(s){return s===null?'∞':String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 function stats(){$('score').textContent=score;$('wrong').textContent=wrong;$('questionCount').textContent=`Otázka ${answered+(current?1:0)}`;$('streak').textContent=`Série: ${streak}`;$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
