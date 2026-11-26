@@ -13,7 +13,23 @@ function map(){
   countryLayer.selectAll('path').data(features).join('path').attr('class','country').attr('d',path).on('click',function(event,f){if($('filter').value==='Státy a regiony'&&active){event.stopPropagation();pick(f)}});
   polyLayer.selectAll('path').data(orogPolygons).join('path').attr('class','orog-polygon').attr('d',path).on('click',function(event,f){if($('filter').value==='Orografie'&&active){event.stopPropagation();pick(f)}});
   pointLayer.selectAll('circle').data(orogPoints).join('circle').attr('class','orog-dot').attr('cx',d=>projection(d.geometry.coordinates)[0]).attr('cy',d=>projection(d.geometry.coordinates)[1]).attr('r',3.5);
-  zoomBehavior=d3.zoom().extent([[0,0],[1200,650]]).scaleExtent([1,14]).on('zoom',e=>{countryLayer.attr('transform',e.transform);cityLayer.attr('transform',e.transform);polyLayer.attr('transform',e.transform);pointLayer.attr('transform',e.transform)});
+  zoomBehavior=d3.zoom().extent([[0,0],[1200,650]]).scaleExtent([1,14]).on('zoom',e=>{
+    countryLayer.attr('transform',e.transform);
+    cityLayer.attr('transform',e.transform);
+    polyLayer.attr('transform',e.transform);
+    pointLayer.attr('transform',e.transform);
+
+    // Zachovej velikost bodových značek v pixelech i při přiblížení mapy.
+    const k=e.transform.k;
+    pointLayer.selectAll('.orog-dot').attr('r',3.5/k);
+    pointLayer.selectAll('.orog-mark').attr('r',function(){
+        return d3.select(this).classed('orog-revealed') ? 8/k : 7/k;
+    }).style('stroke-width',function(){
+        return d3.select(this).classed('orog-revealed') ? 1.2/k+'px' : 1.4/k+'px';
+    });
+    cityLayer.selectAll('.city-city-correct').attr('r',5/k).style('stroke-width',1.4/k+'px');
+    cityLayer.selectAll('.city-revealed').attr('r',4/k).style('stroke-width',1/k+'px');
+});
   svg.call(zoomBehavior).on('dblclick.zoom',null);
   svg.on('click.city-orog',function(event){
     const category=$('filter').value;if(!active||!current||locked)return;
