@@ -35,7 +35,15 @@ function stats(){$('score').textContent=score;$('wrong').textContent=wrong;$('qu
 function end(msg){if(!active)return;active=false;clearInterval(timer);timer=null;clearTimeout(advanceTimer);advanceTimer=null;$('feedback').textContent=msg;$('next').disabled=true;$('finalCorrect').textContent=score;$('finalWrong').textContent=wrong;$('finalAccuracy').textContent=(answered?Math.round(score/Math.max(1,score+wrong)*100):0)+' %';$('finalStreak').textContent=best;$('results').classList.remove('hidden')}
 function tick(){if(remaining===null)return;if(remaining<=0){$('timer').textContent='00:00';end('Čas vypršel.');return}remaining--;$('timer').textContent=fmt(remaining)}
 function show(){clearTimeout(advanceTimer);advanceTimer=null;clearWrongMarks();attemptsThisQuestion=0;if(!deck.length){end('Všechny dostupné pojmy jsou hotové.');return}current=deck.pop();locked=false;$('term').textContent=current.term.name;$('category').textContent=current.term.category;$('feedback').textContent='Najdi hledané místo na mapě.';$('feedback').className='';$('next').disabled=true;$('next').textContent='Další pojem →';stats()}
-function markPoint(feature,kind){const xy=projection(feature.geometry.coordinates);d3.select(kind==='city'?'#cities':'#orography-points').append('circle').attr('class',`orog-mark ${kind==='city'?'city-':''}${kind}-correct`).attr('cx',xy[0]).attr('cy',xy[1]).attr('r',kind==='city'?5:7)}
+function markPoint(feature,kind){
+ const xy=projection(feature.geometry.coordinates),circle=d3.select(kind==='city'?'#cities':'#orography-points').append('circle')
+  .attr('class',`orog-mark ${kind==='city'?'city-':''}${kind}-correct`)
+  .attr('cx',xy[0]).attr('cy',xy[1]).attr('r',kind==='city'?5:7);
+ if(kind==='city'){
+  const firstTry=attemptsThisQuestion===0;
+  circle.style('fill',firstTry?'#22c55e':'#facc15').style('stroke','#ffffff').style('stroke-width','1.4px');
+ }
+}
 function pick(f){
  if(!active||!current||locked)return;const category=$('filter').value;let correct=false;
  if(category==='Státy a regiony')correct=f===current.feature;
@@ -50,7 +58,7 @@ function pick(f){
 }
 function wrongAttempt(){if(!active||!current||locked)return;wrong++;attemptsThisQuestion++;streak=0;if(attemptsThisQuestion>=3){locked=true;answered++;$('feedback').textContent='Třetí chybný pokus — správná poloha je označena žlutě.';$('feedback').className='bad';const category=$('filter').value;
  if(category==='Státy a regiony')d3.selectAll('.country').filter(d=>d===current.feature).classed('revealed',true).classed('wrong',false);
- else if(category==='Města'){const xy=projection(current.feature.geometry.coordinates);d3.select('#cities').append('circle').attr('class','city-revealed').attr('cx',xy[0]).attr('cy',xy[1]).attr('r',8)}
+ else if(category==='Města'){const xy=projection(current.feature.geometry.coordinates);d3.select('#cities').append('circle').attr('class','city-revealed').attr('cx',xy[0]).attr('cy',xy[1]).attr('r',4).style('fill','#ef4444').style('stroke','#ffffff').style('stroke-width','1px')}
  else {current.target.polygons.forEach(f=>d3.selectAll('.orog-polygon').filter(d=>d===f).classed('revealed',true));current.target.points.forEach(f=>{const xy=projection(f.geometry.coordinates);d3.select('#orography-points').append('circle').attr('class','orog-mark orog-revealed').attr('cx',xy[0]).attr('cy',xy[1]).attr('r',8)})}
  $('next').disabled=false;$('next').textContent='Další pojem →';
  }else{$('feedback').textContent=`✕ Špatně. Ještě ${3-attemptsThisQuestion} ${3-attemptsThisQuestion===1?'pokus':'pokusy'}.`;$('feedback').className='bad'}
