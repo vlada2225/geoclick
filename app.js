@@ -2,6 +2,7 @@ const aliases={"Alžírsko":"Algeria","Angola":"Angola","Benin":"Benin","Botswan
 const $=id=>document.getElementById(id);
 let terms=[],features=[],cityFeatures=[],orogPolygons=[],orogPoints=[],questions=[],deck=[],current=null,score=0,wrong=0,answered=0,streak=0,best=0,remaining=null,timer=null,active=false,locked=false,attemptsThisQuestion=0;
 let zoomBehavior,projection,advanceTimer=null;
+
 function norm(s){return(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'')}
 function match(t){let n=norm(aliases[t.name]||t.name);return features.find(f=>[f.properties.ADMIN,f.properties.NAME,f.properties.NAME_EN].some(x=>norm(x)===n))}
 function orogTarget(term){return {term,polygons:orogPolygons.filter(f=>norm(f.properties.quiz_term||f.properties.name)===norm(term.name)),points:orogPoints.filter(f=>norm(f.properties.name)===norm(term.name))}}
@@ -37,6 +38,30 @@ function map(){
     const candidates=category==='Města'?cityFeatures:orogPoints;
     for(const feature of candidates){const xy=projection(feature.geometry.coordinates);if(!xy)continue;const screen=transform.apply(xy),distance=Math.hypot(screen[0]-point[0],screen[1]-point[1]);if(distance<bestDistance){bestDistance=distance;bestFeature=feature}}
     if(bestFeature&&bestDistance<=26)pick(bestFeature);else wrongAttempt();
+  });
+  // Malé ostrovy a státy: klikací tolerance kolem všech částí právě hledaného státu.
+  // Geometrie na mapě se nezvětšuje; rozšiřuje se pouze neviditelná hit oblast.
+  svg.on('click.country-hit',function(event){
+    if($('filter').value!=='Státy a regiony'||!active||!current||locked)return;
+    const point=d3.pointer(event,this);
+    const transform=d3.zoomTransform(this);
+    const rect=this.getBoundingClientRect();
+    const tolerance=20*(1200/Math.max(1,rect.width));
+    const geom=current.feature.geometry;
+    const polygons=geom.type==='Polygon'?[geom.coordinates]:
+                   geom.type==='MultiPolygon'?geom.coordinates:[];
+    let nearest=Infinity;
+    for(const coordinates of polygons){
+      const part={type:'Feature',properties:{},geometry:{type:'Polygon',coordinates}};
+      const centroid=d3.geoCentroid(part);
+      const xy=projection(centroid);
+      if(!xy||!Number.isFinite(xy[0])||!Number.isFinite(xy[1]))continue;
+      const screen=transform.apply(xy);
+      const distance=Math.hypot(screen[0]-point[0],screen[1]-point[1]);
+      if(distance<nearest)nearest=distance;
+    }
+    if(nearest<=tolerance)pick(current.feature);
+    else wrongAttempt();
   });
   $('zoomIn').onclick=()=>svg.transition().duration(180).call(zoomBehavior.scaleBy,1.6);
   $('zoomOut').onclick=()=>svg.transition().duration(180).call(zoomBehavior.scaleBy,1/1.6);
@@ -115,7 +140,7 @@ function zoomToCurrent(category){
 }
 function fmt(s){return s===null?'∞':String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 function stats(){$('score').textContent=score;$('wrong').textContent=wrong;$('questionCount').textContent=`Otázka ${answered+(current?1:0)}`;$('streak').textContent=`Série: ${streak}`;$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
-function end(msg){if(!active)return;active=false;clearInterval(timer);timer=null;clearTimeout(advanceTimer);advanceTimer=null;$('feedback').textContent=msg;$('next').disabled=true;$('finalCorrect').textContent=score;$('finalWrong').textContent=wrong;$('finalAccuracy').textContent=(answered?Math.round(score/Math.max(1,score+wrong)*100):0)+' %';$('finalStreak').textContent=best;$('results').classList.remove('hidden')}
+function end(msg){if(!active)return;if(msg==='Všechny dostupné pojmy jsou hotové.')window.geoclickTrack?.('kvíz-dokončen');active=false;clearInterval(timer);timer=null;clearTimeout(advanceTimer);advanceTimer=null;$('feedback').textContent=msg;$('next').disabled=true;$('finalCorrect').textContent=score;$('finalWrong').textContent=wrong;$('finalAccuracy').textContent=(answered?Math.round(score/Math.max(1,score+wrong)*100):0)+' %';$('finalStreak').textContent=best;$('results').classList.remove('hidden')}
 function tick(){if(remaining===null)return;if(remaining<=0){$('timer').textContent='00:00';end('Čas vypršel.');return}remaining--;$('timer').textContent=fmt(remaining)}
 function show(){clearTimeout(advanceTimer);advanceTimer=null;clearWrongMarks();attemptsThisQuestion=0;if(!deck.length){end('Všechny dostupné pojmy jsou hotové.');return}current=deck.pop();locked=false;$('term').textContent=current.term.name;$('category').textContent=current.term.category;$('feedback').textContent='Najdi hledané místo na mapě.';$('feedback').className='';$('next').disabled=true;$('next').textContent='Další pojem →';stats()}
 function markPoint(feature,kind){
@@ -146,7 +171,7 @@ function wrongAttempt(){if(!active||!current||locked)return;wrong++;attemptsThis
  zoomToCurrent(category);$('next').disabled=false;$('next').textContent='Další pojem →';
  }else{$('feedback').textContent=`✕ Špatně. Ještě ${3-attemptsThisQuestion} ${3-attemptsThisQuestion===1?'pokus':'pokusy'}.`;$('feedback').className='bad'}
  stats();$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
-function start(){clearInterval(timer);clearTimeout(advanceTimer);advanceTimer=null;resetColors();resetZoom();score=wrong=answered=streak=best=0;active=true;$('results').classList.add('hidden');const category=$('filter').value;
+function start(){clearInterval(timer);clearTimeout(advanceTimer);advanceTimer=null;resetColors();resetZoom();score=wrong=answered=streak=best=0;active=true;window.geoclickTrack?.('kvíz-spuštěn-'+({ 'Státy a regiony':'staty-regiony','Města':'mesta','Orografie':'orografie' }[$('filter').value]||'ostatni'));$('results').classList.add('hidden');const category=$('filter').value;
  if(category==='Státy a regiony')questions=terms.filter(t=>t.category===category).map(term=>({term,feature:match(term)})).filter(x=>x.feature);
  else if(category==='Města')questions=terms.filter(t=>t.category===category).map(term=>({term,feature:cityFeatures.find(f=>norm(f.properties.name)===norm(term.name))})).filter(x=>x.feature);
  else if(category==='Orografie')questions=terms.filter(t=>t.category===category).map(term=>({term,target:orogTarget(term)})).filter(x=>x.target.polygons.length||x.target.points.length);

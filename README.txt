@@ -60,3 +60,39 @@ Kontrola
 - 36/36 orografických pojmů má odpovídající geometrii.
 - Kontrola geometrie vrstvy států a regionů: bez neplatných geometrií.
 - Data jsou ve WGS 84 (EPSG:4326).
+
+
+GeoClick 3.13
+=============
+
+Malé státy a ostrovy
+--------------------
+- Při aktivní otázce v kategorii Státy a regiony je doplněna neviditelná
+  klikací tolerance kolem jednotlivých polygonových částí právě hledaného státu.
+- Skutečné hranice ani vykreslená velikost ostrovů se nemění.
+- Klikací tolerance je přibližně 20 CSS pixelů a přizpůsobuje se velikosti
+  zobrazení mapy.
+
+Tracker
+-------
+- Přehled návštěv, spuštěných kvízů, dokončených kvízů a míry dokončení.
+- Návštěva se započítá jednou za otevřenou relaci karty.
+- Dokončení se započítá pouze při projití všech pojmů v daném kole.
+- Statistiky jsou uloženy v localStorage daného prohlížeče.
+- Nejde o centrální analytiku: data se nesdílejí mezi zařízeními ani uživateli.
+
+
+VERZE 3.15 – GOATCOUNTER PŘIPOJEN
+- Lokální počítadlo odstraněno z veřejného rozhraní.
+- Přidán soubor analytics.js pro GoatCounter.
+- Automaticky se zaznamená návštěva stránky (pageview).
+- Zaznamenávají se události: spuštění kvízu podle kategorie a dokončení celého kvízu.
+
+GOATCOUNTER JE JIŽ NASTAVEN
+- Site code: vllada255
+- Měřicí endpoint: https://vllada255.goatcounter.com/count
+- Dashboard: https://vllada255.goatcounter.com/
+- Návštěvy stránky se zaznamenávají automaticky.
+- Události: spuštění kvízu podle kategorie a dokončení celého kvízu.
+
+Nahrajte celý obsah složky geoclick do kořene GitHub Pages repozitáře. Po nasazení ověřte návštěvu v GoatCounter dashboardu; statistiky se mohou objevit s krátkým zpožděním. Data z předchozího lokálního trackeru se do centrálních statistik nepřenášejí. Blokování analytických skriptů nebo JavaScriptu může část návštěv vynechat.
