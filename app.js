@@ -30,6 +30,34 @@ function map(){
 function resetColors(){d3.selectAll('.country,.orog-polygon').classed('wrong',false).classed('revealed',false).classed('correct',false);d3.select('#cities').selectAll('*').remove();d3.select('#orography-points').selectAll('.orog-mark').remove()}
 function clearWrongMarks(){d3.selectAll('.country,.orog-polygon').classed('wrong',false).classed('revealed',false)}
 function resetZoom(){if(zoomBehavior)d3.select('#map').call(zoomBehavior.transform,d3.zoomIdentity)}
+function zoomToCurrent(category){
+ const svg=d3.select('#map'),width=1200,height=650,padding=95;
+ let bounds=null;
+ const addBounds=b=>{
+  if(!b||!b[0]||!b[1]||!Number.isFinite(b[0][0])||!Number.isFinite(b[0][1])||!Number.isFinite(b[1][0])||!Number.isFinite(b[1][1]))return;
+  if(!bounds)bounds=[[b[0][0],b[0][1]],[b[1][0],b[1][1]]];
+  else{
+   bounds[0][0]=Math.min(bounds[0][0],b[0][0]);bounds[0][1]=Math.min(bounds[0][1],b[0][1]);
+   bounds[1][0]=Math.max(bounds[1][0],b[1][0]);bounds[1][1]=Math.max(bounds[1][1],b[1][1]);
+  }
+ };
+ if(category==='Státy a regiony'&&current.feature){
+  addBounds(d3.geoPath(projection).bounds(current.feature));
+ }else if(category==='Města'&&current.feature){
+  const p=projection(current.feature.geometry.coordinates);addBounds([p,p]);
+ }else if(category==='Orografie'){
+  current.target.polygons.forEach(f=>addBounds(d3.geoPath(projection).bounds(f)));
+  current.target.points.forEach(f=>{const p=projection(f.geometry.coordinates);addBounds([p,p])});
+ }
+ if(!bounds)return;
+ const cx=(bounds[0][0]+bounds[1][0])/2,cy=(bounds[0][1]+bounds[1][1])/2;
+ const bw=Math.max(1,bounds[1][0]-bounds[0][0]),bh=Math.max(1,bounds[1][1]-bounds[0][1]);
+ let k;
+ if(category==='Města')k=5.5;
+ else k=Math.max(1.6,Math.min(10,(width-2*padding)/bw,(height-2*padding)/bh));
+ const transform=d3.zoomIdentity.translate(width/2-k*cx,height/2-k*cy).scale(k);
+ svg.transition().duration(750).call(zoomBehavior.transform,transform);
+}
 function fmt(s){return s===null?'∞':String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 function stats(){$('score').textContent=score;$('wrong').textContent=wrong;$('questionCount').textContent=`Otázka ${answered+(current?1:0)}`;$('streak').textContent=`Série: ${streak}`;$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
 function end(msg){if(!active)return;active=false;clearInterval(timer);timer=null;clearTimeout(advanceTimer);advanceTimer=null;$('feedback').textContent=msg;$('next').disabled=true;$('finalCorrect').textContent=score;$('finalWrong').textContent=wrong;$('finalAccuracy').textContent=(answered?Math.round(score/Math.max(1,score+wrong)*100):0)+' %';$('finalStreak').textContent=best;$('results').classList.remove('hidden')}
@@ -60,7 +88,7 @@ function wrongAttempt(){if(!active||!current||locked)return;wrong++;attemptsThis
  if(category==='Státy a regiony')d3.selectAll('.country').filter(d=>d===current.feature).classed('revealed',true).classed('wrong',false);
  else if(category==='Města'){const xy=projection(current.feature.geometry.coordinates);d3.select('#cities').append('circle').attr('class','city-revealed').attr('cx',xy[0]).attr('cy',xy[1]).attr('r',4).style('fill','#ef4444').style('stroke','#ffffff').style('stroke-width','1px')}
  else {current.target.polygons.forEach(f=>d3.selectAll('.orog-polygon').filter(d=>d===f).classed('revealed',true));current.target.points.forEach(f=>{const xy=projection(f.geometry.coordinates);d3.select('#orography-points').append('circle').attr('class','orog-mark orog-revealed').attr('cx',xy[0]).attr('cy',xy[1]).attr('r',8)})}
- $('next').disabled=false;$('next').textContent='Další pojem →';
+ zoomToCurrent(category);$('next').disabled=false;$('next').textContent='Další pojem →';
  }else{$('feedback').textContent=`✕ Špatně. Ještě ${3-attemptsThisQuestion} ${3-attemptsThisQuestion===1?'pokus':'pokusy'}.`;$('feedback').className='bad'}
  stats();$('progress').style.width=(answered/Math.max(1,questions.length)*100)+'%';$('progressText').textContent=`${answered} / ${questions.length}`}
 function start(){clearInterval(timer);clearTimeout(advanceTimer);advanceTimer=null;resetColors();resetZoom();score=wrong=answered=streak=best=0;active=true;$('results').classList.add('hidden');const category=$('filter').value;
