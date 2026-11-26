@@ -118,3 +118,9 @@ POKRYTÍ ŘEK
 NASAZENÍ
 --------
 Nahraj celý obsah složky geoclick do kořene GitHub Pages repozitáře. Vedle app.js musí být také rivers.geojson a rivers_mapping.csv.
+
+
+VERZE 3.17 – NEVIDITELNÉ ŘEKY
+- Říční linie ani jejich stavové zvýraznění se nevykreslují.
+- Zachovány jsou pouze průhledné klikací geometrie, aktivní pouze při kvízu Řeky.
+- Klikací tolerance zůstává zachována; hráč nevidí obrysy ani průběh řek.
