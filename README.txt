@@ -96,3 +96,25 @@ GOATCOUNTER JE JIŽ NASTAVEN
 - Události: spuštění kvízu podle kategorie a dokončení celého kvízu.
 
 Nahrajte celý obsah složky geoclick do kořene GitHub Pages repozitáře. Po nasazení ověřte návštěvu v GoatCounter dashboardu; statistiky se mohou objevit s krátkým zpožděním. Data z předchozího lokálního trackeru se do centrálních statistik nepřenášejí. Blokování analytických skriptů nebo JavaScriptu může část návštěv vynechat.
+
+
+VERZE 3.16 – KATEGORIE ŘEKY
+=============================
+- Přidána vrstva rivers.geojson z Natural Earth 1:10m Rivers + Lake Centerlines.
+- Řeky jsou uloženy ve WGS 84 (EPSG:4326) a vykreslují se pomocí stejné D3 Robinsonovy projekce jako podkladová mapa.
+- Přidána kategorie Řeky s liniovým vyhodnocováním kliknutí.
+- Klikací tolerance říčních linií je přibližně 16 CSS pixelů a přizpůsobuje se velikosti mapy a zoomu.
+- Správná řeka se zvýrazní zeleně; po třech chybných pokusech žlutě a mapa se přiblíží na její rozsah.
+- GoatCounter zaznamenává spuštění kategorie Řeky jako kvíz-spuštěn-reky.
+
+POKRYTÍ ŘEK
+------------
+- Původní seznam v terms.json obsahuje 39 položek kategorie Řeky.
+- 37 položek má odpovídající liniovou geometrii a je hratelných.
+- Bahr al-Arab není v dodaném Natural Earth zdroji; Eyrovo jezero je jezero, nikoliv řeka. Obě položky se automaticky vynechají z hratelného balíčku.
+- V GeoJSONu je 37 prvků typu MultiLineString. Některé řeky jsou složeny z více úseků.
+- `rivers_mapping.csv` obsahuje kontrolní párování na původní seznam.
+
+NASAZENÍ
+--------
+Nahraj celý obsah složky geoclick do kořene GitHub Pages repozitáře. Vedle app.js musí být také rivers.geojson a rivers_mapping.csv.

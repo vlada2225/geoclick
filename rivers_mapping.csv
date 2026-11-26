@@ -1,0 +1,39 @@
+﻿excel_order,excel_name,status,source_names,source_alt,feature_count
+1,Bahr al-Arab,not found in Natural Earth,,,0
+2,Bílá Volta,matched,Nakanbé,White Volta,1
+3,Kongo (řeka),matched,Congo; Lualaba,Congo,4
+4,Nil,matched,Nile,,1
+5,Orange,matched,Orange,,2
+6,Zambezi,matched,Zambezi,,1
+7,Amudarja,matched,Amu Darya,,1
+8,Amur,matched,Amur; Heilong Jiang,Amur,2
+9,Brahmaputra,matched,Brahmaputra; Dihang; Yarlung,Brahmaputra,3
+10,Eufrat,matched,Al Furat; Euphrates; Firat,,3
+11,Ganga,matched,Ganges,,1
+12,Indus,matched,Indus,,1
+13,Irtyš,matched,Ertis; Ertix; Irtysh,Irtysh,3
+14,Jenisej,matched,Bol’shoy Yenisey; Malyy Yenisey; Verkhniy Yenisey; Yenisey,,4
+15,Lena,matched,Lena,,1
+16,Mekong,matched,Lancang; Mekong,Mekong,2
+17,Ob,matched,Ob,,2
+18,Syrdarja,matched,Syr Darya,,1
+19,Tigris,matched,Dicle; Tigris,,2
+20,Žlutá řeka,matched,Huang,Yellow,2
+21,Darling,matched,Darling,,1
+22,Murray,matched,Murray,,2
+23,Amazonka,matched,Amazonas,,1
+24,Casaquiare,matched,Casiquiare,,1
+25,Marañón,matched,Marañón,,1
+26,Orinoko,matched,Orinoco,,1
+27,Paraná,matched,Paraná,,2
+28,Rio Negro,matched,Rio Negro; Río Negro,,2
+29,São Francisco,matched,São Francisco,,1
+30,Ucayali,matched,Ucayali,,1
+31,Athabaska,matched,Athabasca,,1
+32,Colorado,matched,Colorado,,2
+33,Mackenzie,matched,Mackenzie,,2
+34,Mississippi,matched,Mississippi,,2
+35,Missouri,matched,Missouri,,1
+36,Rio Grande,matched,Rio Grande,,1
+37,řeka Sv. Vavřince,matched,Saint Lawrence,,1
+38,Tennesee,matched,Tennessee,,1
