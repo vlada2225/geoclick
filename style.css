@@ -11,8 +11,10 @@
 
 @media(max-width:700px){}
 
-/* Řeky – liniová vrstva Natural Earth, vykreslená v Robinsonově projekci D3. */
-/* Rivers are deliberately invisible: only their transparent hit paths remain available during the river quiz. */
-.river-line{display:none!important}
-.river-line.correct,.river-line.wrong,.river-line.revealed{display:none!important}
+/* Řeky: za běžného stavu jsou skryté. Zobrazí se až po správné odpovědi
+   (zeleně), případně po třech chybných pokusech (žlutě). */
+.river-line{fill:none;stroke:transparent;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.river-line.correct{stroke:#16a36a}
+.river-line.revealed{stroke:#f2c14e}
+.river-line.wrong{stroke:transparent}
 .river-hit{fill:none;stroke:rgba(0,0,0,0);stroke-linecap:round;stroke-linejoin:round;pointer-events:none;cursor:crosshair}
